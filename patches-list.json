@@ -545,6 +545,38 @@
         }
       ],
       "options": []
+    },
+    {
+      "name": "Unlock Full Lyrics",
+      "description": "Enables full synced lyrics display and removes paywall banners on song lyrics.",
+      "default": true,
+      "category": null,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.anghami",
+          "name": "Anghami",
+          "description": null,
+          "apkFileType": "APKM",
+          "appIconColor": "#A020F0",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "8.0.28",
+              "versionCodes": {
+                "ARM64_V8A": 8000280,
+                "ARMEABI_V7A": 8000280,
+                "X86": 8000280,
+                "X86_64": 8000280
+              },
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
     }
   ]
 }

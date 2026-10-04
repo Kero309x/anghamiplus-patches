@@ -17,6 +17,7 @@ Initial public release of **Anghami Plus Patches** for Anghami `8.0.28` (`com.an
 * **Hide Premium Feature Buttons**: Hides locked upsell buttons including Sing Along (Karaoke) and AI Mix triggers.
 * **Disable Forced Shuffle**: Disables forced shuffle mode on playlists and radio, enabling full on-demand song selection.
 * **Unlock Plus Experience**: Enables client-side Plus features, eliminates free-tier playback restrictions, and sets Account instance plan to Plus.
+* **Unlock Full Lyrics**: Unlocks full synchronized lyrics view, bypasses subscription gates, and removes paywall banners.
 * **Unlimited Track Skips**: Removes song skip limitations and queue navigation restrictions.
 * **Expand Download Limits**: Removes local offline storage caps, disables limited-plan quota checks, and ensures download gates are unlocked.
 * **Show Profile Plus Badge**: Displays the official Plus badge on your profile header and account settings.

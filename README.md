@@ -31,6 +31,7 @@ By eliminating client-side playback restrictions, intrusive advertisements, and 
 | 🔀 **Unrestricted Playback** | Bypasses forced shuffle restrictions; pick and play any track on-demand with unlimited skips. |
 | 👑 **Plus Identity** | Restores the verified Plus badge on user profile headers and inside account settings. |
 | 🧹 **Decluttered Interface** | Strips out aggressive upgrade banners, locked upsell buttons, and Gold paywalls. |
+| 🎤 **Full Synced Lyrics** | Unlocks complete synchronized song lyrics view and eliminates upsell locks. |
 | 🛡️ **Privacy & Telemetry** | Neutrals internal behavioral trackers (Silo), third-party analytics, and Bugsnag crash reporters. |
 | 📦 **Extended Offline Quotas** | Removes local offline storage caps and eliminates limited-plan quota verifications. |
 
@@ -58,9 +59,9 @@ By eliminating client-side playback restrictions, intrusive advertisements, and 
 ## 💊 Included Patches
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.0](https://github.com/Kero309x/anghamiplus-patches/releases)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;13 patches total
+> **[v1.0.0](https://github.com/Kero309x/anghamiplus-patches/releases)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;14 patches total
 <details open>
-<summary>📦 Anghami Patches Suite (13 patches)</summary>
+<summary>📦 Anghami Patches Suite (14 patches)</summary>
 <br>
 
 | 💊 Patch | 📜 Description |
@@ -73,6 +74,7 @@ By eliminating client-side playback restrictions, intrusive advertisements, and 
 | **Hide Premium Feature Buttons** | Hides locked premium-exclusive buttons such as AI Mix and Karaoke triggers. |
 | **Disable Forced Shuffle** | Unlocks direct track selection and disables mandatory shuffle playback. |
 | **Unlock Plus Experience** | Sets Account instance plan to Plus and unlocks local Plus features and UI. |
+| **Unlock Full Lyrics** | Unlocks complete synchronized song lyrics view and removes paywall banners. |
 | **Unlimited Track Skips** | Eliminates song skip counters and queue navigation barriers. |
 | **Expand Download Limits** | Removes local offline storage caps and disables limited-plan quota gates. |
 | **Show Profile Plus Badge** | Displays the official Plus badge on your profile header and account settings. |
