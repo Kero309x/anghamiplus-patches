@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/Kero309x/anghamiplus-patches/compare/v1.0.0...v1.1.0) (2026-10-04)
+
+### ✨ New Features
+
+* add Unlock Full Lyrics patch and unblock synced lyrics view ([18f49a0](https://github.com/Kero309x/anghamiplus-patches/commit/18f49a0fb36eb9175c3c8b4692df62bc380fd719))
+* publish official stable release ([edad501](https://github.com/Kero309x/anghamiplus-patches/commit/edad501b7f1a1cf1aa86711115b69ca61a381bb6))
+
 ## [1.1.0-dev.1](https://github.com/Kero309x/anghamiplus-patches/compare/v1.0.0...v1.1.0-dev.1) (2026-10-04)
 
 ### ✨ New Features
