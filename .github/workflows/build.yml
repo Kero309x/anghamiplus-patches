@@ -30,7 +30,8 @@ jobs:
 
       - name: Build Patches Bundle
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
         run: |
           chmod +x gradlew
           ./gradlew :patches:buildAndroid --no-daemon
