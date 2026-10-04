@@ -1,0 +1,24 @@
+# Changelog
+
+All notable changes to **Anghami Plus Patches** will be documented in this file.
+
+## 1.0.0 (2026-10-05)
+
+### ✨ Initial Release
+
+Initial public release of **Anghami Plus Patches** for Anghami `8.0.28` (`com.anghami`).
+
+#### Features Included:
+* **Block Audio Ads**: Prevents audio advertisements between songs and treats playback tracks as ad-free.
+* **Block Promotional Popups**: Blocks startup popup offers, promotional flyers, and marketing dialogs.
+* **Hide Upgrade Banners**: Hides navigation upgrade tab, header promo banners, and feed subscription upsell cards.
+* **Hide Gold Upsell**: Hides Gold-tier promotional sections and unsupported server-gated features.
+* **Hide Shuffle Badges**: Hides "Plays in shuffle" badges from playlists, album headers, and feed rows.
+* **Hide Premium Feature Buttons**: Hides locked upsell buttons including Sing Along (Karaoke) and AI Mix triggers.
+* **Disable Forced Shuffle**: Disables forced shuffle mode on playlists and radio, enabling full on-demand song selection.
+* **Unlock Plus Experience**: Enables client-side Plus features, eliminates free-tier playback restrictions, and sets Account instance plan to Plus.
+* **Unlimited Track Skips**: Removes song skip limitations and queue navigation restrictions.
+* **Expand Download Limits**: Removes local offline storage caps, disables limited-plan quota checks, and ensures download gates are unlocked.
+* **Show Profile Plus Badge**: Displays the official Plus badge on your profile header and account settings.
+* **Disable Analytics & Crash Logging**: Disables third-party trackers, in-house user activity logging (Silo), and Bugsnag crash reporting.
+* **Spoof App Signature**: Emulates official application signature headers to preserve API authorization compatibility.
