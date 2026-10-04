@@ -2,14 +2,17 @@
 
 # 🎵 Anghami Plus Patches
 
-**A modern, lightweight enhancement suite for Anghami on Android, built for the Morphe ecosystem.**
+**A production-grade, lightweight modification suite for Anghami on Android, built natively for the Morphe ecosystem.**
 
-[![Release](https://img.shields.io/github/v/release/Kero309x/anghamiplus-patches?style=for-the-badge&color=8A2BE2&logo=github)](https://github.com/Kero309x/anghamiplus-patches/releases)
-[![Morphe](https://img.shields.io/badge/Morphe-Compatible-00C853?style=for-the-badge&logo=android)](https://morphe.software)
-[![Target](https://img.shields.io/badge/Target-Anghami%208.0.28-FF5722?style=for-the-badge&logo=google-play)](https://play.google.com/store/apps/details?id=com.anghami)
-[![License](https://img.shields.io/badge/License-GPL%20v3-blue.bar?style=for-the-badge)](LICENSE)
+[![Latest Release](https://img.shields.io/github/v/release/Kero309x/anghamiplus-patches?style=for-the-badge&color=8A2BE2&logo=github)](https://github.com/Kero309x/anghamiplus-patches/releases/latest)
+[![Morphe Ecosystem](https://img.shields.io/badge/Morphe-Compatible-00C853?style=for-the-badge&logo=android)](https://morphe.software)
+[![Target App](https://img.shields.io/badge/Target-Anghami%208.0.28-FF5722?style=for-the-badge&logo=google-play)](https://play.google.com/store/apps/details?id=com.anghami)
+[![Patches Count](https://img.shields.io/badge/Patches-14%20Active-blue?style=for-the-badge)](https://github.com/Kero309x/anghamiplus-patches#--included-patches)
+[![License](https://img.shields.io/badge/License-GPL%20v3-0A84FF?style=for-the-badge)](LICENSE)
 
-[Features](#-key-features) • [Installation](#-quick-install) • [Patches](#-included-patches) • [Building](#-build-from-source) • [Contributors](#-contributors)
+<br>
+
+[✨ Key Features](#-key-features) • [📲 Installation](#-installation-guide) • [🎯 Compatibility](#-compatibility--specifications) • [💊 Included Patches](#-included-patches) • [❓ FAQ](#-frequently-asked-questions) • [🛠️ Build](#️-build-from-source)
 
 </div>
 
@@ -17,42 +20,64 @@
 
 ## 📖 Overview
 
-**Anghami Plus Patches** is a custom bytecode modification package crafted to deliver a clean, uninterrupted, and premium listening experience on the official Anghami Android client. 
+**Anghami Plus Patches** is an advanced reverse-engineered patch collection engineered to transform the official Anghami Android app into a clean, seamless, and premium listening experience.
 
-By eliminating client-side playback restrictions, intrusive advertisements, and telemetry trackers, it restores full user control over playback queues, song selection, and UI appearance.
+By neutralizing client-side barriers, intrusive advertising payloads, and background telemetry collectors, this project restores complete listener control over playback queues, real-time synced lyrics, and user interface aesthetics without requiring device root privileges.
 
 ---
 
 ## ✨ Key Features
 
-| Category | Highlights |
+| Feature | Description |
 | :--- | :--- |
-| 🚫 **Ad-Free Streaming** | Completely silences mid-song audio ads and dismisses annoying startup promotional flyers. |
-| 🔀 **Unrestricted Playback** | Bypasses forced shuffle restrictions; pick and play any track on-demand with unlimited skips. |
-| 👑 **Plus Identity** | Restores the verified Plus badge on user profile headers and inside account settings. |
-| 🧹 **Decluttered Interface** | Strips out aggressive upgrade banners, locked upsell buttons, and Gold paywalls. |
-| 🎤 **Full Synced Lyrics** | Unlocks complete synchronized song lyrics view and eliminates upsell locks. |
-| 🛡️ **Privacy & Telemetry** | Neutrals internal behavioral trackers (Silo), third-party analytics, and Bugsnag crash reporters. |
-| 📦 **Extended Offline Quotas** | Removes local offline storage caps and eliminates limited-plan quota verifications. |
+| 🚫 **Ad-Free Streaming** | Completely silences and bypasses mid-track promotional audio commercials and dismisses startup marketing dialogs. |
+| 🎤 **Synchronized Full Lyrics** | Unlocks full-screen, real-time synchronized song lyrics and completely removes preview paywall banners. |
+| 🔀 **Unrestricted Track Selection** | Completely breaks out of forced shuffle; pick and play any track on-demand from albums, playlists, and search results. |
+| ⏭️ **Unlimited Track Skips** | Eliminates hourly skip limits and removes queue navigation barriers. |
+| 👑 **Client-Side Plus Status** | Restores the verified Plus badge on profile headers, unlocks Plus UI states, and activates the client-side Plus experience. |
+| 🧹 **Decluttered Interface** | Strips away aggressive subscription upgrade tabs, header promo flyers, Gold upsells, and locked promotional cards. |
+| 🛡️ **Privacy & Anti-Telemetry** | Neutrals internal analytics trackers (Anghami Silo), third-party tracking SDKs (Adjust/Branch), and Bugsnag crash logging. |
+| 📦 **Extended Local Quotas** | Eliminates local storage restrictions and quota locks for offline song management. |
 
 ---
 
-## 📲 Quick Install
+## 🎯 Compatibility & Specifications
 
-### Method 1: One-Click Morphe Import (Recommended)
+| Property | Details |
+| :--- | :--- |
+| **Package Name** | `com.anghami` |
+| **Target Version** | **8.0.28** (Version Code: `8000280`) |
+| **Supported Architectures** | `arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64` |
+| **Required Permissions / Root** | **No Root Required** (Works on standard non-root and rooted Android devices) |
+| **Minimum Android OS** | Android 8.0 (Oreo) and above |
 
-1. Ensure you have **Morphe Manager** installed on your Android device.
-2. Tap the link below to automatically add this repository as a patch source:
+---
 
-👉 **[Add to Morphe Manager](https://morphe.software/add-source?github=Kero309x/anghamiplus-patches)**
+## 📲 Installation Guide
 
-### Method 2: Manual Patching
+### Method 1: One-Click Morphe Manager (Recommended)
 
-1. Open **Morphe Manager** or **Morphe-Desktop**.
-2. Add `Kero309x/anghamiplus-patches` to your Patch Sources.
-3. Select the supported **Anghami APK (v8.0.28)**.
-4. Choose your preferred patches (all enabled by default) and tap **Patch**.
-5. Install and enjoy!
+1. Ensure **Morphe Manager** is installed on your Android device.
+2. Tap the direct button below from your phone to automatically register this repository as an active patch source:
+
+<div align="center">
+
+👉 **[Add to Morphe Manager](https://morphe.software/add-source?github=Kero309x/anghamiplus-patches)** 👈
+
+</div>
+
+3. Download the official **Anghami v8.0.28 APK** (available from trusted sources like APKMirror).
+4. In Morphe Manager, select the Anghami APK, choose your preferred patches (all selected by default), and tap **Patch**.
+5. Install the generated APK and enjoy!
+
+### Method 2: Manual Source Configuration
+
+1. Launch **Morphe Manager**.
+2. Navigate to **Settings** ⚙️ ➔ **Sources**.
+3. Tap **Add Source** and input:
+   * **Source Name**: `Anghami Plus Patches`
+   * **Repository**: `Kero309x/anghamiplus-patches`
+4. Return to the Dashboard, select **Anghami (v8.0.28)**, apply patches, and install.
 
 ---
 
@@ -61,81 +86,93 @@ By eliminating client-side playback restrictions, intrusive advertisements, and 
 <!-- PATCHES_START EXPANDED -->
 > **[v1.1.0](https://github.com/Kero309x/anghamiplus-patches/releases/tag/v1.1.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;14 patches total
 <details open>
-<summary>📦 Anghami&nbsp;&nbsp;•&nbsp;&nbsp;14 patches</summary>
+<summary>📦 Anghami Patches Suite (14 patches)</summary>
 <br>
 
-**🎯 Supported versions:**
-
-| 8.0.28 |
-| :---: |
-
-| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
-|----------|----------------|-----------|
-| [Block Audio Ads](#block-audio-ads) | Prevents audio advertisements between songs and treats playback tracks as ad-free. |  |
-| [Block Promotional Popups](#block-promotional-popups) | Blocks startup popup offers, promotional flyers, and marketing dialogs. |  |
-| [Disable Analytics & Crash Logging](#disable-analytics-crash-logging) | Disables third-party trackers, in-house user activity logging (Silo), and Bugsnag crash reporting. |  |
-| [Disable Forced Shuffle](#disable-forced-shuffle) | Disables forced shuffle mode on playlists and radio, enabling full on-demand song selection. |  |
-| [Expand Download Limits](#expand-download-limits) | Removes local offline storage caps and disables limited-plan quota checks. |  |
-| [Hide Gold Upsell](#hide-gold-upsell) | Hides Gold-tier promotional sections and unsupported server-gated features. |  |
-| [Hide Premium Feature Buttons](#hide-premium-feature-buttons) | Hides locked upsell buttons including Sing Along (Karaoke) and AI Mix triggers. |  |
-| [Hide Shuffle Badges](#hide-shuffle-badges) | Hides 'Plays in shuffle' badges from playlists, album headers, and feed rows. |  |
-| [Hide Upgrade Banners](#hide-upgrade-banners) | Hides navigation upgrade tab, header promo banners, and feed subscription upsell cards. |  |
-| [Show Profile Plus Badge](#show-profile-plus-badge) | Displays the official Plus badge on your profile header and account settings. |  |
-| [Spoof App Signature](#spoof-app-signature) | Emulates official application signature headers to preserve API authorization compatibility. |  |
-| [Unlimited Track Skips](#unlimited-track-skips) | Removes song skip limitations and queue navigation restrictions. |  |
-| [Unlock Full Lyrics](#unlock-full-lyrics) | Enables full synced lyrics display and removes paywall banners on song lyrics. |  |
-| [Unlock Plus Experience](#unlock-plus-experience) | Enables client-side Plus features, eliminates free-tier playback restrictions, and enables offline UI mode. |  |
+| 💊 Patch | 📜 Description |
+| :--- | :--- |
+| **Block Audio Ads** | Blocks promotional audio ads between songs and marks tracks as ad-free. |
+| **Block Promotional Popups** | Silences launch promotional modals, sale flyers, and marketing prompts. |
+| **Hide Upgrade Banners** | Removes subscribe tabs, feed upsell cards, and promo banners across the app. |
+| **Hide Gold Upsell** | Cleans up unsupported Gold-tier promotional sections and locked modules. |
+| **Hide Shuffle Badges** | Removes "Plays in shuffle" badges from playlist headers, albums, and cards. |
+| **Hide Premium Feature Buttons** | Hides locked premium-exclusive buttons such as AI Mix and Karaoke triggers. |
+| **Disable Forced Shuffle** | Unlocks direct track selection and disables mandatory shuffle playback. |
+| **Unlock Plus Experience** | Sets Account instance plan to Plus and unlocks local Plus features and UI. |
+| **Unlock Full Lyrics** | Unlocks complete synchronized song lyrics view and removes paywall banners. |
+| **Unlimited Track Skips** | Eliminates song skip counters and queue navigation barriers. |
+| **Expand Download Limits** | Removes local offline storage caps and disables limited-plan quota gates. |
+| **Show Profile Plus Badge** | Displays the official Plus badge on your profile header and account settings. |
+| **Disable Analytics & Crash Logging** | Blocks third-party telemetry, Anghami Silo activity logs, and Bugsnag reports. |
+| **Spoof App Signature** | Spoofs authentic signature headers to ensure uninterrupted backend API access. |
 
 </details>
-
 <!-- PATCHES_END -->
 
 ---
 
-## 🎯 Target Compatibility
+## ❓ Frequently Asked Questions
 
-* **Target Application**: Anghami (`com.anghami`)
-* **Target Version**: `8.0.28` (Version Code `8000280`)
-* **Architectures**: `arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`
-* **Distribution Format**: APK / APKM / Split APKs
+<details>
+<summary><b>Does this require Root access?</b></summary>
+<p>No. Morphe patches modify the APK package directly. You can install and use the patched app on any unrooted or rooted Android device.</p>
+</details>
+
+<details>
+<summary><b>Can I download songs for offline playback?</b></summary>
+<p>Local client limits and quota verifications are fully removed. However, server-side encrypted media streaming (DRM license issuance) is enforced on Anghami's backend servers. This patch unlocks all client-side download workflows without bypassing server entitlement checks.</p>
+</details>
+
+<details>
+<summary><b>Will my existing playlists and account data remain safe?</b></summary>
+<p>Yes. You log into your own regular Anghami account. Your personal playlists, followed artists, and listening history sync normally.</p>
+</details>
+
+<details>
+<summary><b>How do I update to newer patch releases?</b></summary>
+<p>Morphe Manager will automatically detect new releases published to this repository. When an update is released, simply open Morphe Manager and repatch the APK.</p>
+</details>
 
 ---
 
 ## 🛠️ Build from Source
 
-Requirements:
-* **JDK 21+**
-* A valid GitHub Personal Access Token (PAT) with `read:packages` scope (for downloading Morphe build plugins).
+### Prerequisites
+* **Java Development Kit (JDK) 21** or higher.
+* **Git** installed on your system.
+* A GitHub Personal Access Token (PAT) with `read:packages` permission (required to pull Morphe Gradle plugins).
+
+### Building the `.mpp` Bundle
 
 ```bash
 # Clone the repository
 git clone https://github.com/Kero309x/anghamiplus-patches.git
 cd anghamiplus-patches
 
-# Build the .mpp package
+# Build the Android Morphe patch bundle
 ./gradlew :patches:buildAndroid
 ```
 
-The resulting compiled patch bundle will be generated in:
-```
-patches/build/libs/patches-1.0.0.mpp
+The compiled patch artifact will be generated at:
+```text
+patches/build/libs/patches-1.1.0.mpp
 ```
 
 ---
 
 ## 👥 Contributors
 
-* **[Kero309x](https://github.com/Kero309x)** — Project Creator, Lead Developer & Reverse Engineer
+* **[Kero309x](https://github.com/Kero309x)** — Project Creator, Lead Reverse Engineer & Maintainer
 * **Gemini (Google DeepMind)** — AI Architecture, Bytecode Analysis & Pair Programming
 
 ---
 
 ## ⚠️ Disclaimer
 
-This project is created strictly for educational, research, and personal customization purposes. It is not affiliated with, endorsed by, or associated with Anghami. Server-side protections (such as DRM licensing and high-bitrate audio streaming authorization) remain under the control of Anghami servers.
+This open-source project is developed solely for educational, research, and personal customization purposes under fair use. It is not affiliated with, sponsored by, or endorsed by Anghami. All trademarks, service marks, and company names are the property of their respective owners. Server-side protections, DRM systems, and proprietary server assets remain intact and under the sole management of Anghami servers.
 
 ---
 
 ## 📜 License
 
-Licensed under the [GNU General Public License v3.0](LICENSE).
+This project is licensed under the **GNU General Public License v3.0** — see the [LICENSE](LICENSE) file for complete details.
