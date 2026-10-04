@@ -1,3 +1,0 @@
-fix: update CI actions to v4 and add PAT support
-
-Co-authored-by: Gemini <gemini@google.com>
