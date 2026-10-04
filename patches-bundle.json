@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-10-05T00:30:00",
-  "description": "## 1.0.0 (2026-10-05)\n\n### ✨ Initial Release of Anghami Plus Patches\n\n* Rebranded suite under Kero309x for Anghami 8.0.28\n* Block audio ads between songs\n* Block promotional popup offers & marketing dialogs\n* Hide upgrade banners, subscription upsell cards, and Gold sections\n* Disable forced shuffle mode & unlock on-demand song selection\n* Unlock client-side Plus features & offline UI mode\n* Unlimited track skips and queue navigation\n* Expand local download limits & disable quota restrictions\n* Show official Plus badge on Profile and Account settings\n* Disable third-party trackers, Silo analytics, and Bugsnag crash logs\n* Emulate official application signature headers",
-  "download_url": "https://github.com/Kero309x/anghamiplus-patches/releases/download/v1.0.0/patches-1.0.0.mpp",
+  "created_at": "2026-10-04T22:28:45",
+  "description": "## [1.1.0-dev.1](https://github.com/Kero309x/anghamiplus-patches/compare/v1.0.0...v1.1.0-dev.1) (2026-10-04)\n\n### ✨ New Features\n\n* add Unlock Full Lyrics patch and unblock synced lyrics view ([18f49a0](https://github.com/Kero309x/anghamiplus-patches/commit/18f49a0fb36eb9175c3c8b4692df62bc380fd719))",
+  "download_url": "https://github.com/Kero309x/anghamiplus-patches/releases/download/v1.1.0-dev.1/patches-1.1.0-dev.1.mpp",
   "signature_download_url": "",
-  "version": "1.0.0"
+  "version": "1.1.0-dev.1"
 }
