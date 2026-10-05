@@ -84,9 +84,9 @@ By neutralizing client-side barriers, intrusive advertising payloads, and backgr
 ## 💊 Included Patches
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.1.0](https://github.com/Kero309x/anghamiplus-patches/releases/tag/v1.1.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;14 patches total
+> **[v1.1.0](https://github.com/Kero309x/anghamiplus-patches/releases/tag/v1.1.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;17 patches total
 <details open>
-<summary>📦 Anghami Patches Suite (14 patches)</summary>
+<summary>📦 Anghami Patches Suite (17 patches)</summary>
 <br>
 
 | 💊 Patch | 📜 Description |
@@ -103,7 +103,10 @@ By neutralizing client-side barriers, intrusive advertising payloads, and backgr
 | **Unlimited Track Skips** | Eliminates song skip counters and queue navigation barriers. |
 | **Expand Download Limits** | Removes local offline storage caps and disables limited-plan quota gates. |
 | **Show Profile Plus Badge** | Displays the official Plus badge on your profile header and account settings. |
-| **Disable Analytics & Crash Logging** | Blocks third-party telemetry, Anghami Silo activity logs, and Bugsnag reports. |
+| **Disable Analytics & Crash Logging** | Blocks Braze, Firebase, Adjust, listening telemetry, ad reports, and Bugsnag. |
+| **Disable In-App Rating** | Silences in-app review prompts and "Love us? Rate us!" dialog interruptions. |
+| **Allow Screenshots** | Bypasses secure window restrictions (FLAG_SECURE) to allow capturing anywhere. |
+| **Remove Sponsored Content** | Hides sponsored cards, Car Mode promotional recommendations, and radar ads. |
 | **Spoof App Signature** | Spoofs authentic signature headers to ensure uninterrupted backend API access. |
 
 </details>
