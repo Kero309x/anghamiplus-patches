@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/Kero309x/anghamiplus-patches/compare/v1.1.0...v1.2.0) (2026-10-05)
+
+### ✨ New Features
+
+* add rating dialog blocker, screenshot bypass, sponsored content removal, and enhanced telemetry neutralizing ([89791f8](https://github.com/Kero309x/anghamiplus-patches/commit/89791f8f63b81fe34e44f9844cf815b010492332))
+
 ## [1.1.0](https://github.com/Kero309x/anghamiplus-patches/compare/v1.0.0...v1.1.0) (2026-10-04)
 
 ### ✨ New Features

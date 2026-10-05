@@ -84,32 +84,38 @@ By neutralizing client-side barriers, intrusive advertising payloads, and backgr
 ## 💊 Included Patches
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.1.0](https://github.com/Kero309x/anghamiplus-patches/releases/tag/v1.1.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;17 patches total
+> **[v1.2.0](https://github.com/Kero309x/anghamiplus-patches/releases/tag/v1.2.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;17 patches total
 <details open>
-<summary>📦 Anghami Patches Suite (17 patches)</summary>
+<summary>📦 Anghami&nbsp;&nbsp;•&nbsp;&nbsp;17 patches</summary>
 <br>
 
-| 💊 Patch | 📜 Description |
-| :--- | :--- |
-| **Block Audio Ads** | Blocks promotional audio ads between songs and marks tracks as ad-free. |
-| **Block Promotional Popups** | Silences launch promotional modals, sale flyers, and marketing prompts. |
-| **Hide Upgrade Banners** | Removes subscribe tabs, feed upsell cards, and promo banners across the app. |
-| **Hide Gold Upsell** | Cleans up unsupported Gold-tier promotional sections and locked modules. |
-| **Hide Shuffle Badges** | Removes "Plays in shuffle" badges from playlist headers, albums, and cards. |
-| **Hide Premium Feature Buttons** | Hides locked premium-exclusive buttons such as AI Mix and Karaoke triggers. |
-| **Disable Forced Shuffle** | Unlocks direct track selection and disables mandatory shuffle playback. |
-| **Unlock Plus Experience** | Sets Account instance plan to Plus and unlocks local Plus features and UI. |
-| **Unlock Full Lyrics** | Unlocks complete synchronized song lyrics view and removes paywall banners. |
-| **Unlimited Track Skips** | Eliminates song skip counters and queue navigation barriers. |
-| **Expand Download Limits** | Removes local offline storage caps and disables limited-plan quota gates. |
-| **Show Profile Plus Badge** | Displays the official Plus badge on your profile header and account settings. |
-| **Disable Analytics & Crash Logging** | Blocks Braze, Firebase, Adjust, listening telemetry, ad reports, and Bugsnag. |
-| **Disable In-App Rating** | Silences in-app review prompts and "Love us? Rate us!" dialog interruptions. |
-| **Allow Screenshots** | Bypasses secure window restrictions (FLAG_SECURE) to allow capturing anywhere. |
-| **Remove Sponsored Content** | Hides sponsored cards, Car Mode promotional recommendations, and radar ads. |
-| **Spoof App Signature** | Spoofs authentic signature headers to ensure uninterrupted backend API access. |
+**🎯 Supported versions:**
+
+| 8.0.28 |
+| :---: |
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Allow Screenshots](#allow-screenshots) | Bypasses secure window restrictions to allow screenshots and screen recording across the app. |  |
+| [Block Audio Ads](#block-audio-ads) | Prevents audio advertisements between songs and treats playback tracks as ad-free. |  |
+| [Block Promotional Popups](#block-promotional-popups) | Blocks startup popup offers, promotional flyers, and marketing dialogs. |  |
+| [Disable Analytics & Crash Logging](#disable-analytics-crash-logging) | Disables third-party trackers (Braze, Adjust, Firebase, Google, Bugsnag), in-house Silo tracking, and listening telemetry. |  |
+| [Disable Forced Shuffle](#disable-forced-shuffle) | Disables forced shuffle mode on playlists and radio, enabling full on-demand song selection. |  |
+| [Disable In-App Rating](#disable-in-app-rating) | Disables the in-app review dialogs and 'Love us? Rate us!' rating prompts. |  |
+| [Expand Download Limits](#expand-download-limits) | Removes local offline storage caps and disables limited-plan quota checks. |  |
+| [Hide Gold Upsell](#hide-gold-upsell) | Hides Gold-tier promotional sections and unsupported server-gated features. |  |
+| [Hide Premium Feature Buttons](#hide-premium-feature-buttons) | Hides locked upsell buttons including Sing Along (Karaoke) and AI Mix triggers. |  |
+| [Hide Shuffle Badges](#hide-shuffle-badges) | Hides 'Plays in shuffle' badges from playlists, album headers, and feed rows. |  |
+| [Hide Upgrade Banners](#hide-upgrade-banners) | Hides navigation upgrade tab, header promo banners, and feed subscription upsell cards. |  |
+| [Remove Sponsored Content](#remove-sponsored-content) | Hides sponsored cards, recommended promotions in Car Mode, and radar sponsored content. |  |
+| [Show Profile Plus Badge](#show-profile-plus-badge) | Displays the official Plus badge on your profile header and account settings. |  |
+| [Spoof App Signature](#spoof-app-signature) | Emulates official application signature headers to preserve API authorization compatibility. |  |
+| [Unlimited Track Skips](#unlimited-track-skips) | Removes song skip limitations and queue navigation restrictions. |  |
+| [Unlock Full Lyrics](#unlock-full-lyrics) | Enables full synced lyrics display and removes paywall banners on song lyrics. |  |
+| [Unlock Plus Experience](#unlock-plus-experience) | Enables client-side Plus features, eliminates free-tier playback restrictions, and enables offline UI mode. |  |
 
 </details>
+
 <!-- PATCHES_END -->
 
 ---
