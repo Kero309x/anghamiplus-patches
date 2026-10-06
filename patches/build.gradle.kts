@@ -5,9 +5,11 @@ patches {
     // server premium checks remain). See README.md.
     about {
         name = "Anghami Plus Patches"
-        description = "Advanced feature unlock, ad-free playback, and UI enhancements for Anghami."
+        description = "Advanced feature unlock, ad-free playback, and UI enhancements for Anghami. " +
+            "Based on the Anghami patch set by Mohamed Amr Nady " +
+            "(mohamedamrnady/anghami-patches, GPLv3) - see ATTRIBUTION.md."
         source = "https://github.com/Kero309x/anghamiplus-patches"
-        author = "Kero309x"
+        author = "Kero309x, based on work by Mohamed Amr Nady (@mohamedamrnady)"
         contact = "https://github.com/Kero309x/anghamiplus-patches/issues"
         website = "https://github.com/Kero309x/anghamiplus-patches"
         license = "GPLv3"

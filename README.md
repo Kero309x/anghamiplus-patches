@@ -27,6 +27,12 @@ Each patch targets a specific client-side gate in `com.anghami` — advertising,
 
 Nothing here touches Anghami's servers. Entitlement checks that are enforced server-side, DRM licence issuance and account state remain the responsibility of Anghami's own backend, exactly as before.
 
+> **🙏 Attribution** — This project is **based on** the Anghami patch set by
+> **[Mohamed Amr Nady](https://github.com/mohamedamrnady)**
+> ([mohamedamrnady/anghami-patches](https://github.com/mohamedamrnady/anghami-patches), GPLv3).
+> The patch sources here are derived from that project and have been reworked by Kero309x from
+> **2026-10-05** onwards. See [ATTRIBUTION.md](ATTRIBUTION.md) for the complete list of changes.
+
 ---
 
 ## ✨ Features
@@ -260,7 +266,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full workflow.
 
 ## 👥 Authors & Contributors
 
-* **[Kero309x](https://github.com/Kero309x)** — project creator and maintainer.
+* **[Mohamed Amr Nady](https://github.com/mohamedamrnady)** — original author of the Anghami patch set
+  this project is based on ([mohamedamrnady/anghami-patches](https://github.com/mohamedamrnady/anghami-patches), GPLv3).
+* **[Kero309x](https://github.com/Kero309x)** — maintainer: restructuring, verification, packaging and releases.
 * **[Ahmed Ramzy](https://www.facebook.com/ahmd.ramzy.101)** — contributor.
 
 Contributions are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). Please report security issues
@@ -282,8 +290,9 @@ with the laws that apply to you.
 ## 📜 License
 
 Released under the **GNU General Public License v3.0** — see [LICENSE](LICENSE).
-Redistributions of this bundle or of derivative works must keep the licence and the branding terms
-described in [NOTICE](NOTICE).
+This project is based on the Anghami patch set by Mohamed Amr Nady; redistributions of
+this bundle or of derivative works must keep the licence, the attribution described in
+[ATTRIBUTION.md](ATTRIBUTION.md), and the branding terms described in [NOTICE](NOTICE).
 
 ---
 
