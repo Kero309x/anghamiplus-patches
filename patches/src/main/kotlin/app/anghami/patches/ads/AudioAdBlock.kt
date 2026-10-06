@@ -3,8 +3,12 @@ package app.anghami.patches.ads
 import app.anghami.patches.core.AnghamiTarget
 import app.anghami.patches.core.forceTrue
 import app.morphe.patcher.Fingerprint
+import app.morphe.patcher.fieldAccess
+import app.morphe.patcher.methodCall
+import app.morphe.patcher.opcode
 import app.morphe.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.AccessFlags
+import com.android.tools.smali.dexlib2.Opcode
 
 /**
  * Reports every playback item as advertisement-free.
@@ -40,6 +44,13 @@ object GetDisableAdsSignature : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "Z",
     parameters = listOf(),
+    filters = listOf(
+        fieldAccess(
+            opcode = Opcode.IGET_BOOLEAN,
+            definingClass = "this",
+            type = "Z",
+        ),
+    )
 )
 
 /** `AdSettings.noAd(Song)` — static lookup deciding whether a track carries ads. */
@@ -49,6 +60,16 @@ object NoAdStaticSignature : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
     returnType = "Z",
     parameters = listOf("Lcom/anghami/ghost/pojo/Song;"),
+    filters = listOf(
+        methodCall(
+            definingClass = "Lcom/anghami/ghost/objectbox/models/ads/AdSettings;",
+            name = "fetch",
+        ),
+        methodCall(
+            definingClass = "Lcom/anghami/ghost/objectbox/models/ads/AdSettings;",
+            name = "getNoAd",
+        ),
+    )
 )
 
 /** `AdSettings.getNoAd(Song)` — instance variant of the same per-track lookup. */
@@ -58,4 +79,11 @@ object GetNoAdSignature : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "Z",
     parameters = listOf("Lcom/anghami/ghost/pojo/Song;"),
+    filters = listOf(
+        fieldAccess(
+            opcode = Opcode.IGET_BOOLEAN,
+            definingClass = "this",
+            type = "Z",
+        ),
+    )
 )

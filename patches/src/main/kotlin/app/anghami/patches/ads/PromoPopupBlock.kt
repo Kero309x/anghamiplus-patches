@@ -3,7 +3,10 @@ package app.anghami.patches.ads
 import app.anghami.patches.core.AnghamiTarget
 import app.anghami.patches.core.forceVoid
 import app.morphe.patcher.Fingerprint
+import app.morphe.patcher.opcode
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.string
+import com.android.tools.smali.dexlib2.Opcode
 
 /**
  * Suppresses the promotional popups the app raises on its own behalf.
@@ -42,6 +45,9 @@ object PopupShowSignature : Fingerprint(
     name = "i",
     returnType = "V",
     parameters = listOf("Lcom/anghami/ui/popupwindow/a;"),
+    filters = listOf(
+        string("adType"),
+    )
 )
 
 /** Advance step of the fullscreen startup dialog. */
@@ -50,6 +56,9 @@ object FullscreenDialogSignature : Fingerprint(
     name = "onNext",
     returnType = "V",
     parameters = listOf("Ljava/lang/Object;"),
+    filters = listOf(
+        string("FullScreenDialog:"),
+    )
 )
 
 /** Callback fired once a promotional flyer has finished loading. */
@@ -58,4 +67,8 @@ object FlyerOnAdLoadedSignature : Fingerprint(
     name = "onAdLoaded",
     returnType = "V",
     parameters = listOf(),
+    filters = listOf(
+        opcode(Opcode.CONST),
+        opcode(Opcode.RETURN_VOID),
+    )
 )

@@ -23,6 +23,7 @@ and inject the same instructions.
 | 2026-10-05 | Bytecode signatures renamed (`*Fingerprint` → `*Signature`); comment text rewritten. |
 | 2026-10-06 | Sources restructured to one file per feature in domain packages (`ads/`, `playback/`, `download/`, `entitlement/`, `store/`, `ui/`, `lyrics/`, `privacy/`, `system/`, `integrity/`); the target matrix consolidated in `core/AnghamiTarget.kt`; the repeated smali payloads replaced by the shared `core/Bytecode.kt` stubs (`forceTrue`, `forceFalse`, `forceNull`, `forceVoid`); the bundled extension renamed to `app.anghamiplus.extension.LyricsUrlHook`; README, contribution guide, issue and pull request templates rewritten. |
 | 2026-10-06 | This attribution file added, together with the credits in `README.md` and in the bundle metadata (`patches/build.gradle.kts`). |
+| 2026-10-06 | Bytecode signatures corrected: 57 of them carried match criteria that did not describe the real methods in Anghami 8.0.28 (wrong return types, a renamed method, wrong parameters and missing disambiguating filters). They now use the criteria verified in the original project. |
 
 ## Third-party components
 

@@ -4,6 +4,8 @@ import app.anghami.patches.core.AnghamiTarget
 import app.anghami.patches.core.forceFalse
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstructions
+import app.morphe.patcher.fieldAccess
+import app.morphe.patcher.methodCall
 import app.morphe.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.instruction.formats.Instruction22c
@@ -68,6 +70,11 @@ object ShuffleBadgeBaseSignature : Fingerprint(
     name = "getHasShuffleBadge",
     returnType = "Z",
     parameters = listOf(),
+    filters = listOf(
+        fieldAccess(
+            smali = "Lcom/anghami/model/adapter/headers/BaseHeaderModel;->hasShuffleBadge:Z"
+        ),
+    )
 )
 
 /** `PlaylistHeaderModel.getHasShuffleBadge()` — playlist header override. */
@@ -76,6 +83,11 @@ object ShuffleBadgePlaylistSignature : Fingerprint(
     name = "getHasShuffleBadge",
     returnType = "Z",
     parameters = listOf(),
+    filters = listOf(
+        fieldAccess(
+            smali = "Lcom/anghami/ghost/pojo/PossiblyGenericModel;->isShuffleMode:Z"
+        ),
+    )
 )
 
 /** `AlbumHeaderModel.getHasShuffleBadge()` — album header override. */
@@ -84,6 +96,11 @@ object ShuffleBadgeAlbumSignature : Fingerprint(
     name = "getHasShuffleBadge",
     returnType = "Z",
     parameters = listOf(),
+    filters = listOf(
+        fieldAccess(
+            smali = "Lcom/anghami/ghost/pojo/PossiblyGenericModel;->isShuffleMode:Z"
+        ),
+    )
 )
 
 /** `LinkNewCardModel._bind(HeaderLinkHolder)` — link card binding. */
@@ -92,6 +109,11 @@ object LinkNewCardBindSignature : Fingerprint(
     name = "_bind",
     returnType = "V",
     parameters = listOf("Lcom/anghami/model/adapter/LinkNewCardModel\$HeaderLinkHolder;"),
+    filters = listOf(
+        fieldAccess(
+            smali = "Lcom/anghami/model/adapter/LinkNewCardModel\$HeaderLinkHolder;->shuffleBadge:Landroid/view/View;"
+        ),
+    )
 )
 
 /** `StoreCarouselSubModel._bind(StoreSubViewHolder)` — store carousel row binding. */
@@ -100,6 +122,12 @@ object StoreCarouselSubBindSignature : Fingerprint(
     name = "_bind",
     returnType = "V",
     parameters = listOf("Lcom/anghami/model/adapter/store/StoreCarouselSubModel\$StoreSubViewHolder;"),
+    filters = listOf(
+        methodCall(
+            definingClass = "Lcom/anghami/model/adapter/store/StoreCarouselSubModel\$StoreSubViewHolder;",
+            name = "getShuffleBadge",
+        ),
+    )
 )
 
 /** `PlaylistRowModel.getSubtitleText()` — playlist row subtitle. */
@@ -108,6 +136,12 @@ object PlaylistRowSubtitleSignature : Fingerprint(
     name = "getSubtitleText",
     returnType = "Ljava/lang/CharSequence;",
     parameters = listOf(),
+    filters = listOf(
+        methodCall(
+            definingClass = "Lcom/anghami/util/u;",
+            name = "b",
+        ),
+    )
 )
 
 /** `AlbumRowModel.getSubtitleText()` — album row subtitle. */
@@ -116,6 +150,12 @@ object AlbumRowSubtitleSignature : Fingerprint(
     name = "getSubtitleText",
     returnType = "Ljava/lang/CharSequence;",
     parameters = listOf(),
+    filters = listOf(
+        methodCall(
+            definingClass = "Lcom/anghami/util/u;",
+            name = "b",
+        ),
+    )
 )
 
 /** `PlaylistCardModel.getSubtitleStartingDrawable()` — playlist card leading icon. */
@@ -124,6 +164,11 @@ object PlaylistCardDrawableSignature : Fingerprint(
     name = "getSubtitleStartingDrawable",
     returnType = "I",
     parameters = listOf(),
+    filters = listOf(
+        fieldAccess(
+            smali = "Lcom/anghami/ghost/pojo/PossiblyGenericModel;->isShuffleMode:Z"
+        ),
+    )
 )
 
 /** `AlbumCardModel.getSubtitleStartingDrawable()` — album card leading icon. */
@@ -132,6 +177,11 @@ object AlbumCardDrawableSignature : Fingerprint(
     name = "getSubtitleStartingDrawable",
     returnType = "I",
     parameters = listOf(),
+    filters = listOf(
+        fieldAccess(
+            smali = "Lcom/anghami/ghost/pojo/PossiblyGenericModel;->isShuffleMode:Z"
+        ),
+    )
 )
 
 /** `LinkCardModel.getSubtitleStartingDrawable()` — link card leading icon. */
@@ -140,6 +190,11 @@ object LinkCardDrawableSignature : Fingerprint(
     name = "getSubtitleStartingDrawable",
     returnType = "I",
     parameters = listOf(),
+    filters = listOf(
+        fieldAccess(
+            smali = "Lcom/anghami/ghost/pojo/PossiblyGenericModel;->isShuffleMode:Z"
+        ),
+    )
 )
 
 /** `LinkModel.setSubtitleView(LinkViewHolder)` — link row subtitle; holds two shuffle reads. */
@@ -148,4 +203,9 @@ object LinkModelSubtitleSignature : Fingerprint(
     name = "setSubtitleView",
     returnType = "V",
     parameters = listOf("Lcom/anghami/model/adapter/LinkModel\$LinkViewHolder;"),
+    filters = listOf(
+        fieldAccess(
+            smali = "Lcom/anghami/model/adapter/LinkModel\$LinkViewHolder;->subtitleTextView:Landroid/widget/TextView;"
+        ),
+    )
 )

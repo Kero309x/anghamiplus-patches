@@ -3,7 +3,9 @@ package app.anghami.patches.integrity
 import app.anghami.patches.core.AnghamiTarget
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
+import app.morphe.patcher.methodCall
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.string
 import com.android.tools.smali.dexlib2.AccessFlags
 
 /**
@@ -78,4 +80,15 @@ object GetAppSignatureSignature : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
     returnType = "Ljava/lang/String;",
     parameters = listOf("Ljava/lang/String;", "[B"),
+    filters = listOf(
+        methodCall(
+            definingClass = "Landroid/content/pm/PackageManager;",
+            name = "getPackageInfo",
+        ),
+        string("SHA-256"),
+        methodCall(
+            definingClass = "Lcom/anghami/ghost/utils/SignatureUtils;",
+            name = "convertToHex",
+        ),
+    )
 )

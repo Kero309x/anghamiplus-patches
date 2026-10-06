@@ -4,6 +4,8 @@ import app.anghami.patches.core.AnghamiTarget
 import app.anghami.patches.core.forceFalse
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstructions
+import app.morphe.patcher.fieldAccess
+import app.morphe.patcher.methodCall
 import app.morphe.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.instruction.formats.Instruction22c
@@ -71,6 +73,11 @@ object KaraokeUpsellButtonSignature : Fingerprint(
     name = "isShowKaraokeUpsellButton",
     returnType = "Z",
     parameters = listOf(),
+    filters = listOf(
+        fieldAccess(
+            smali = "Lcom/anghami/ghost/local/Account;->showKaraokeUpsellButton:Z"
+        ),
+    )
 )
 
 /** Player method that builds the AI Mix switch and its label. */
@@ -79,6 +86,12 @@ object PlayerAutomixSwitchSignature : Fingerprint(
     name = "U0",
     returnType = "V",
     parameters = listOf(),
+    filters = listOf(
+        methodCall(
+            definingClass = "Lcom/anghami/odin/automix/a;",
+            name = "a",
+        ),
+    )
 )
 
 /** Account model flag that gates the playlist AI Mix section. */
@@ -87,4 +100,10 @@ object MixAIButtonPlaylistSignature : Fingerprint(
     name = "showMixAIButtonPlaylist",
     returnType = "Z",
     parameters = listOf(),
+    filters = listOf(
+        methodCall(
+            definingClass = "Lcom/anghami/ghost/local/Account;",
+            name = "getBooleanAttribute",
+        ),
+    )
 )

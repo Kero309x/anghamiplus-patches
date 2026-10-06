@@ -3,8 +3,12 @@ package app.anghami.patches.store
 import app.anghami.patches.core.AnghamiTarget
 import app.anghami.patches.core.forceFalse
 import app.morphe.patcher.Fingerprint
+import app.morphe.patcher.fieldAccess
+import app.morphe.patcher.methodCall
+import app.morphe.patcher.opcode
 import app.morphe.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.AccessFlags
+import com.android.tools.smali.dexlib2.Opcode
 
 /**
  * Keeps Gold-tier surfaces hidden on builds without a Gold subscription.
@@ -42,6 +46,12 @@ object IsGoldSignature : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
     returnType = "Z",
     parameters = listOf(),
+    filters = listOf(
+        methodCall(
+            definingClass = "Lcom/anghami/ghost/local/Account;",
+            name = "getBooleanAttribute",
+        ),
+    )
 )
 
 /** Matches the instance-level `Account.isGoldUser()` entitlement check. */
@@ -51,6 +61,15 @@ object IsGoldUserSignature : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "Z",
     parameters = listOf(),
+    filters = listOf(
+        fieldAccess(
+            smali = "Lcom/anghami/ghost/local/Account\$PlanType;->PLAN_TYPE_GOLD:Lcom/anghami/ghost/local/Account\$PlanType;"
+        ),
+        methodCall(
+            definingClass = "Ljava/lang/String;",
+            name = "equals",
+        ),
+    )
 )
 
 /** Matches the `GoldUtilsKt.isGold(Profile)` overload. */
@@ -59,6 +78,13 @@ object GoldUtilsProfileSignature : Fingerprint(
     name = "isGold",
     returnType = "Z",
     parameters = listOf("Lcom/anghami/ghost/pojo/Profile;"),
+    filters = listOf(
+        fieldAccess(
+            opcode = Opcode.IGET,
+            definingClass = "Lcom/anghami/ghost/pojo/Profile;",
+            type = "I",
+        ),
+    )
 )
 
 /** Matches the `GoldUtilsKt.isGold(RankedUser)` overload. */
@@ -67,6 +93,11 @@ object GoldUtilsRankedUserSignature : Fingerprint(
     name = "isGold",
     returnType = "Z",
     parameters = listOf("Lcom/anghami/ghost/pojo/RankedUser;"),
+    filters = listOf(
+        fieldAccess(
+            smali = "Lcom/anghami/ghost/local/Account\$PlanType;->PLAN_TYPE_GOLD:Lcom/anghami/ghost/local/Account\$PlanType;"
+        ),
+    )
 )
 
 /** Matches the `GoldUtilsKt.isGold(Story.User)` overload. */
@@ -75,4 +106,9 @@ object GoldUtilsStoryUserSignature : Fingerprint(
     name = "isGold",
     returnType = "Z",
     parameters = listOf("Lcom/anghami/ghost/pojo/stories/Story\$User;"),
+    filters = listOf(
+        fieldAccess(
+            smali = "Lcom/anghami/ghost/local/Account\$PlanType;->PLAN_TYPE_GOLD:Lcom/anghami/ghost/local/Account\$PlanType;"
+        ),
+    )
 )

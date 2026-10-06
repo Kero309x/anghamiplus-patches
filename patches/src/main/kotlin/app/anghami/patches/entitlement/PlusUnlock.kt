@@ -5,8 +5,12 @@ import app.anghami.patches.core.forceFalse
 import app.anghami.patches.core.forceTrue
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
+import app.morphe.patcher.fieldAccess
+import app.morphe.patcher.methodCall
+import app.morphe.patcher.opcode
 import app.morphe.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.AccessFlags
+import com.android.tools.smali.dexlib2.Opcode
 
 /**
  * Presents the signed-in account as a Plus subscriber to every local check.
@@ -66,6 +70,12 @@ object IsPlusSignature : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
     returnType = "Z",
     parameters = listOf(),
+    filters = listOf(
+        methodCall(
+            definingClass = "Lcom/anghami/ghost/local/Account;",
+            name = "getBooleanAttribute",
+        ),
+    )
 )
 
 /** `Account.isPlusUser()` — instance subscriber flag of the account. */
@@ -75,6 +85,18 @@ object IsPlusUserSignature : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "Z",
     parameters = listOf(),
+    filters = listOf(
+        fieldAccess(
+            smali = "Lcom/anghami/ghost/local/Account\$PlanType;->PLAN_TYPE_PLUS:Lcom/anghami/ghost/local/Account\$PlanType;"
+        ),
+        fieldAccess(
+            smali = "Lcom/anghami/ghost/local/Account\$PlanType;->PLAN_TYPE_FREE_TRIAL:Lcom/anghami/ghost/local/Account\$PlanType;"
+        ),
+        methodCall(
+            definingClass = "Ljava/lang/String;",
+            name = "equals",
+        ),
+    )
 )
 
 /** `Account.enablePlayerRestrictions()` — re-enables the free-tier player limits. */
@@ -84,6 +106,12 @@ object EnablePlayerRestrictionsSignature : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
     returnType = "Z",
     parameters = listOf(),
+    filters = listOf(
+        methodCall(
+            definingClass = "Lcom/anghami/ghost/local/Account;",
+            name = "getBooleanAttribute",
+        ),
+    )
 )
 
 /** `PlayQueue.canPlayOfflineAndFree()` — gate for offline and free queue playback. */
@@ -93,6 +121,10 @@ object CanPlayOfflineAndFreeSignature : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "Z",
     parameters = listOf(),
+    filters = listOf(
+        opcode(Opcode.CONST_4),
+        opcode(Opcode.RETURN),
+    )
 )
 
 /** `ProtoAccount$Account.getPlanType()` — subscription plan type accessor. */

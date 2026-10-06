@@ -5,8 +5,12 @@ import app.anghami.patches.core.forceFalse
 import app.anghami.patches.core.forceNull
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
+import app.morphe.patcher.methodCall
+import app.morphe.patcher.opcode
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.string
 import com.android.tools.smali.dexlib2.AccessFlags
+import com.android.tools.smali.dexlib2.Opcode
 
 /**
  * Removes the subscription upgrade surfaces a free account is still shown:
@@ -161,6 +165,9 @@ object GetPlusTabSignature : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "Z",
     parameters = listOf(),
+    filters = listOf(
+        string("plusTab"),
+    )
 )
 
 /** Matches `PreferenceHelper.getHasRestrictedQueue()`, which drives the queue prompts. */
@@ -170,14 +177,24 @@ object GetHasRestrictedQueueSignature : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "Z",
     parameters = listOf(),
+    filters = listOf(
+        string("restricted_queue"),
+    )
 )
 
 /** Matches `HeaderBar.setData(BlueBarItem)`, the entry point of the header bar. */
 object HeaderBarSetDataSignature : Fingerprint(
     definingClass = "Lcom/anghami/ui/bar/HeaderBar;",
     name = "setData",
+    accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "V",
     parameters = listOf("Lcom/anghami/ghost/objectbox/models/BlueBarItem;"),
+    filters = listOf(
+        methodCall(
+            definingClass = "LT8/a;",
+            name = "setData",
+        ),
+    )
 )
 
 /** Matches the `BlueBarItem(String, String, String)` constructor. */
@@ -193,8 +210,15 @@ object BlueBarItemConstructorSignature : Fingerprint(
 object ButtonBindSignature : Fingerprint(
     definingClass = "Lcom/anghami/model/adapter/ButtonModel;",
     name = "_bind",
+    accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "V",
     parameters = listOf("Lcom/anghami/model/adapter/ButtonModel\$ButtonViewHolder;"),
+    filters = listOf(
+        methodCall(
+            definingClass = "Lcom/anghami/ghost/utils/ThemeUtils;",
+            name = "isInNightMode",
+        ),
+    )
 )
 
 /** Matches `LinkModel._bind(LinkViewHolder)`, which binds a server link card. */
@@ -203,33 +227,45 @@ object LinkBindSignature : Fingerprint(
     name = "_bind",
     returnType = "V",
     parameters = listOf("Lcom/anghami/model/adapter/LinkModel\$LinkViewHolder;"),
+    filters = listOf(
+        methodCall(
+            definingClass = "Lcom/anghami/ghost/pojo/Link;",
+            name = "getDeepLink",
+        ),
+    )
 )
 
 /** Matches `PreferenceHelper.getUpgradeModel()`, the subscriptions screen payload. */
 object GetUpgradeModelSignature : Fingerprint(
     definingClass = "Lcom/anghami/ghost/prefs/PreferenceHelper;",
     name = "getUpgradeModel",
-    accessFlags = listOf(AccessFlags.PUBLIC),
-    returnType = "Lcom/anghami/ghost/model/UpgradeModel;",
+    returnType = "Ljava/lang/String;",
     parameters = listOf(),
+    filters = listOf(
+        string("settings_upgrade_model"),
+    )
 )
 
 /** Matches `PreferenceHelper.getSettingsQuestion()`, rendered as the settings banner row. */
 object GetSettingsQuestionSignature : Fingerprint(
     definingClass = "Lcom/anghami/ghost/prefs/PreferenceHelper;",
     name = "getSettingsQuestion",
-    accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "Ljava/lang/String;",
     parameters = listOf(),
+    filters = listOf(
+        string("question_setting"),
+    )
 )
 
 /** Matches `LibraryConfiguration.getPromoButton()`, the library promo card source. */
 object LibraryPromoButtonSignature : Fingerprint(
     definingClass = "Lcom/anghami/ghost/api/response/LibraryConfigurationAPIResponse\$LibraryConfiguration;",
-    name = "getPromoButton",
-    accessFlags = listOf(AccessFlags.PUBLIC),
-    returnType = "Lcom/anghami/ghost/pojo/Button;",
+    name = "getButton",
+    returnType = "Lcom/anghami/ghost/pojo/APIButton;",
     parameters = listOf(),
+    filters = listOf(
+        opcode(Opcode.RETURN_OBJECT),
+    )
 )
 
 /** Matches `list_fragment.e.shouldInclude(DisplayTypeModel)`, the feed include filter. */
@@ -237,5 +273,11 @@ object ShouldIncludeUpsellSignature : Fingerprint(
     definingClass = "Lcom/anghami/app/base/list_fragment/e;",
     name = "shouldInclude",
     returnType = "Z",
-    parameters = listOf("Lcom/anghami/model/adapter/base/DisplayTypeModel;"),
+    parameters = listOf(
+        "Lcom/anghami/model/adapter/base/ConfigurableModel;",
+        "Ljava/lang/String;",
+    ),
+    filters = listOf(
+        string("Non BaseModel subclass in searchable list: "),
+    )
 )

@@ -6,8 +6,13 @@ import app.anghami.patches.core.forceTrue
 import app.anghami.patches.core.forceVoid
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
+import app.morphe.patcher.fieldAccess
+import app.morphe.patcher.literal
+import app.morphe.patcher.methodCall
+import app.morphe.patcher.opcode
 import app.morphe.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.AccessFlags
+import com.android.tools.smali.dexlib2.Opcode
 
 /**
  * Neutralises the offline-download guards that the client evaluates before a
@@ -59,6 +64,10 @@ object IsOnLimitedPlanSignature : Fingerprint(
     name = "isOnLimitedPlan",
     returnType = "Z",
     parameters = listOf("Lcom/anghami/ghost/local/Account;"),
+    filters = listOf(
+        literal(100),
+        opcode(Opcode.RETURN),
+    )
 )
 
 /** `DownloadManager.assertDownloadLimitReached(Account, int)`. */
@@ -67,6 +76,14 @@ object AssertDownloadLimitReachedSignature : Fingerprint(
     name = "assertDownloadLimitReached",
     returnType = "V",
     parameters = listOf("Lcom/anghami/ghost/local/Account;", "I"),
+    filters = listOf(
+        fieldAccess(
+            opcode = Opcode.IGET,
+            definingClass = "Lcom/anghami/ghost/local/Account;",
+            type = "I",
+        ),
+        opcode(Opcode.THROW),
+    )
 )
 
 /** `DownloadManager.assertDownloadRestrictions(Account, int, SongDownloadReason)`. */
@@ -79,6 +96,13 @@ object AssertDownloadRestrictionsSignature : Fingerprint(
         "I",
         "Lcom/anghami/ghost/objectbox/models/downloads/SongDownloadReason;",
     ),
+    filters = listOf(
+        methodCall(
+            definingClass = "Lcom/anghami/ghost/local/Account;",
+            name = "isPlusUser",
+        ),
+        opcode(Opcode.THROW),
+    )
 )
 
 /** `ProtoAccount$Account.getMaxOfflineSongs()`. */
@@ -88,6 +112,13 @@ object MaxOfflineSongsSignature : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "I",
     parameters = listOf(),
+    filters = listOf(
+        fieldAccess(
+            opcode = Opcode.IGET,
+            definingClass = "this",
+            type = "I",
+        ),
+    )
 )
 
 /** `ProtoAccount$Account.getMaxOfflineTime()`. */
@@ -97,6 +128,13 @@ object MaxOfflineTimeSignature : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "I",
     parameters = listOf(),
+    filters = listOf(
+        fieldAccess(
+            opcode = Opcode.IGET,
+            definingClass = "this",
+            type = "I",
+        ),
+    )
 )
 
 /** `ProtoAccount$Account.getCanGoLive()`. */
@@ -106,6 +144,13 @@ object GetCanGoLiveSignature : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "Z",
     parameters = listOf(),
+    filters = listOf(
+        fieldAccess(
+            opcode = Opcode.IGET_BOOLEAN,
+            definingClass = "this",
+            type = "Z",
+        ),
+    )
 )
 
 /** `ProtoAccount$Account.getDisableDownloads()`. */

@@ -6,7 +6,10 @@ import app.anghami.patches.core.forceTrue
 import app.anghami.patches.core.forceVoid
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstructions
+import app.morphe.patcher.methodCall
+import app.morphe.patcher.opcode
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.string
 import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.instruction.formats.Instruction22c
@@ -93,6 +96,13 @@ object ForceShuffleSignature : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "V",
     parameters = listOf(),
+    filters = listOf(
+        methodCall(
+            definingClass = "Lcom/anghami/odin/playqueue/PlayQueue;",
+            name = "setShuffleMode",
+        ),
+        opcode(Opcode.RETURN_VOID),
+    )
 )
 
 /** Targets `PlayQueue.fillFromSyncData(...)V`, which copies the synced `shuffleOn` flag. */
@@ -105,6 +115,9 @@ object FillFromSyncDataSignature : Fingerprint(
         "Lcom/anghami/odin/playqueue/ServerPlayQueue;",
         "Ljava/util/List;",
     ),
+    filters = listOf(
+        string("infinite"),
+    )
 )
 
 /** Targets `PlayQueue.updateFromSocketPayload(...)V`, the socket variant of the same copy. */
@@ -114,6 +127,9 @@ object SocketPayloadShuffleSignature : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "V",
     parameters = listOf("LXe/c;"),
+    filters = listOf(
+        string("told to shuffle, but something wrong with shuffled songs"),
+    )
 )
 
 /** Targets the list screen predicate that decides whether a tap starts a radio queue. */
@@ -125,6 +141,9 @@ object ShouldPlayRadioSignature : Fingerprint(
         "Lcom/anghami/ghost/pojo/Song;",
         "Lcom/anghami/ghost/pojo/section/Section;",
     ),
+    filters = listOf(
+        string("shuffle"),
+    )
 )
 
 /** Targets `PlayQueueManager.canShuffleCurrentQueue()Z`, the UI gate for the shuffle buttons. */
@@ -133,6 +152,12 @@ object CanShuffleCurrentQueueSignature : Fingerprint(
     name = "canShuffleCurrentQueue",
     returnType = "Z",
     parameters = listOf(),
+    filters = listOf(
+        methodCall(
+            definingClass = "Lcom/anghami/odin/playqueue/PlayQueue;",
+            name = "canShuffle",
+        ),
+    )
 )
 
 /** Targets `RadioPlayQueue.shouldShowShuffleMessage()Z`, the upsell dialog trigger. */
@@ -141,4 +166,7 @@ object RadioShuffleMessageSignature : Fingerprint(
     name = "shouldShowShuffleMessage",
     returnType = "Z",
     parameters = listOf(),
+    filters = listOf(
+        string("shuffle"),
+    )
 )
