@@ -108,7 +108,7 @@ are signature-matched and may fail to apply, so re-verify before re-targeting th
 ## 💊 Patch catalogue
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.3.2](https://github.com/Kero309x/anghamiplus-patches/releases/tag/v1.3.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;17 patches total
+> **[v1.3.3](https://github.com/Kero309x/anghamiplus-patches/releases/tag/v1.3.3)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;17 patches total
 <details open>
 <summary>📦 Anghami&nbsp;&nbsp;•&nbsp;&nbsp;17 patches</summary>
 <br>

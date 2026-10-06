@@ -1,3 +1,9 @@
+## [1.3.3](https://github.com/Kero309x/anghamiplus-patches/compare/v1.3.2...v1.3.3) (2026-10-06)
+
+### 🐛 Bug Fixes
+
+* credit the original Anghami patch set ([48de97c](https://github.com/Kero309x/anghamiplus-patches/commit/48de97c5a3b38bbdab5a67673bb7ec045f725555))
+
 ## [1.3.2](https://github.com/Kero309x/anghamiplus-patches/releases/tag/v1.3.2) (2026-10-05)
 
 ### ✨ New Features
