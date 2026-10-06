@@ -197,15 +197,6 @@ object HeaderBarSetDataSignature : Fingerprint(
     )
 )
 
-/** Matches the `BlueBarItem(String, String, String)` constructor. */
-object BlueBarItemConstructorSignature : Fingerprint(
-    definingClass = "Lcom/anghami/ghost/objectbox/models/BlueBarItem;",
-    name = "<init>",
-    accessFlags = listOf(AccessFlags.PUBLIC),
-    returnType = "V",
-    parameters = listOf("Ljava/lang/String;", "Ljava/lang/String;", "Ljava/lang/String;"),
-)
-
 /** Matches `ButtonModel._bind(ButtonViewHolder)`, which binds a server button card. */
 object ButtonBindSignature : Fingerprint(
     definingClass = "Lcom/anghami/model/adapter/ButtonModel;",
