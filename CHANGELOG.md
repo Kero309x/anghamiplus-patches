@@ -1,3 +1,9 @@
+## [1.3.4](https://github.com/Kero309x/anghamiplus-patches/compare/v1.3.3...v1.3.4) (2026-10-06)
+
+### 🐛 Bug Fixes
+
+* match the fingerprints against the verified 8.0.28 signatures ([f90c5c0](https://github.com/Kero309x/anghamiplus-patches/commit/f90c5c04b293a49c6f779a49d7ca129891f3991f))
+
 ## [1.3.3](https://github.com/Kero309x/anghamiplus-patches/compare/v1.3.2...v1.3.3) (2026-10-06)
 
 ### 🐛 Bug Fixes
